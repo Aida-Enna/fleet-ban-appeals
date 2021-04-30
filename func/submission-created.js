@@ -32,13 +32,12 @@ exports.handler = async function (event, context) {
         
         const userInfo = decodeJwt(payload.token);
         const BlockedUsers = ['813414784065863692'];
-        const BlockedUsersReasons = ['spamming the form'];
         if (BlockedUsers.indexOf(userInfo.id) > -1)
         {
             return {
                 statusCode: 303,
                 headers: {
-                    "Location": "/banned?msg=" + BlockedUsersReasons
+                    "Location": "/banned"
                 }
             };
         }
