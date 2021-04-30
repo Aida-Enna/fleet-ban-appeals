@@ -56,7 +56,6 @@ exports.handler = async function (event, context) {
             }
         }
 
-        if (process.env.GUILD_ID) {
             try {
                 const ban = await getBan(userInfo.id, process.env.GUILD_ID, process.env.DISCORD_BOT_TOKEN);
                 if (ban !== null && ban.reason) {
@@ -67,7 +66,6 @@ exports.handler = async function (event, context) {
             } catch (e) {
                 console.log(e);
             }
-        }
 
         const result = await fetch(`${API_ENDPOINT}/channels/${encodeURIComponent(process.env.APPEALS_CHANNEL)}/messages`, {
             method: "POST",
