@@ -11,14 +11,6 @@
         <title>Failed!</title>
     </head>
     <body class="d-flex h-100 justify-content-center align-items-center">
-        You cannot submit ban appeals. Reason: <h1 id="msg" style="color: #43b581;" class="text-center">
-        </h1>
-
-        <script>
-            const msg = new URLSearchParams(document.location.search.substring(1)).get("msg");
-            if (msg) {
-                document.getElementById("msg").innerText = msg;
-            }
-        </script>
+        <h1 style="color: #43b581;" class="text-center">You cannot submit ban appeals.</h1>
     </body>
 </html>
