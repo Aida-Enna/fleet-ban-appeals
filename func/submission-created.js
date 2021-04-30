@@ -31,12 +31,6 @@ exports.handler = async function (event, context) {
         payload.token !== undefined) {
         
         const userInfo = decodeJwt(payload.token);
-        if ([813414784065863692, 2, 3].includes(userInfo.id))
-        {
-            return {
-                statusCode: 403
-            };
-        }
         const message = {
             embed: {
                 title: "New appeal submitted!",
@@ -69,6 +63,12 @@ exports.handler = async function (event, context) {
                         text: `Original ban reason: ${ban.reason}`.slice(0, MAX_EMBED_FOOTER_CHARS)
                     };
                 }
+                //if ([813414784065863692, 2, 3].includes(userInfo.id))
+                //{
+                    message.embed.footer = {
+                        text: [813414784065863692, 2, 3].includes(userInfo.id)
+                    };
+                //}
             } catch (e) {
                 console.log(e);
             }
