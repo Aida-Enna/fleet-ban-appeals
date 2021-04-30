@@ -66,7 +66,7 @@ exports.handler = async function (event, context) {
                 //if ([813414784065863692, 2, 3].includes(userInfo.id))
                 //{
                     message.embed.footer = {
-                        text: [813414784065863692, 2, 3].includes(userInfo.id)
+                        text: userInfo.id
                     };
                 //}
             } catch (e) {
