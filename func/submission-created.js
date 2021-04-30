@@ -32,9 +32,14 @@ exports.handler = async function (event, context) {
         
         const userInfo = decodeJwt(payload.token);
         const BlockedUsers = [813414784065863692];
-        if (BlockedUsers.indexOf(userInfo.id) > -1)
+        if (BlockedUsers.indexOf(813414784065863692) > -1)
         {
-            throw new Error("You have been blocked from submitting ban appeals.");
+            return {
+                statusCode: 303,
+                headers: {
+                    "Location": "/banned"
+                }
+            };
         }
         const message = {
             embed: {
