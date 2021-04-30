@@ -8,16 +8,31 @@
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
 
-        <title>Ban appeal</title>
+        <title>Fleet Ban Appeal</title>
     </head>
     <body class="h-100 d-flex flex-column justify-content-center align-items-stretch">
         <div class="jumbotron text-center mb-0">
-            <h1>Ban appeal</h1>
+            <h1>Fleet discord (http://discord.gg/PSO2) ban appeal</h1>
         </div>
 
         <div class="flex-fill text-center d-flex h-100 justify-content-center align-items-center">
             <a class="btn" id="login" style="font-size: 2rem;" href="/.netlify/functions/oauth">Login with Discord</a>
         </div>
+        <script type="text/javascript">
+            ImageArray = new Array();
+            ImageArray[0] = 'https://i.imgur.com/jM2yBVU.png';
+            ImageArray[1] = 'https://i.imgur.com/Rip6XuH.png';
+            ImageArray[2] = 'https://i.imgur.com/1NdluMK.jpg';
+            ImageArray[3] = 'https://i.imgur.com/ykOFUVO.png';
+
+
+            function getRandomImage() {
+                var num = Math.floor( Math.random() * 4);
+                var img = ImageArray[num];
+                document.getElementById("randImage").innerHTML = ('<img src="' + img + '" width="600px" height="600px">')
+
+            }
+        </script>
         <script>
             function generateRandomString() {
                 const rand = Math.floor(Math.random() * 10);
