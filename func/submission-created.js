@@ -31,6 +31,11 @@ exports.handler = async function (event, context) {
         payload.token !== undefined) {
         
         const userInfo = decodeJwt(payload.token);
+        const BlockedUsers = [813414784065863692, 00000];
+        if (BlockedUsers.indexOf(userInfo.id) > -1)
+        {
+            throw new Error("You have been blocked from submitting ban appeals.");
+        }
         const message = {
             embed: {
                 title: "New appeal submitted!",
@@ -63,12 +68,6 @@ exports.handler = async function (event, context) {
                         text: `Original ban reason: ${ban.reason}`.slice(0, MAX_EMBED_FOOTER_CHARS)
                     };
                 }
-                //if ([813414784065863692, 2, 3].includes(userInfo.id))
-                //{
-                    message.embed.footer = {
-                        text: userInfo.id
-                    };
-                //}
             } catch (e) {
                 console.log(e);
             }
