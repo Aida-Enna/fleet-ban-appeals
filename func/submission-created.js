@@ -31,7 +31,7 @@ exports.handler = async function (event, context) {
         payload.token !== undefined) {
         
         const userInfo = decodeJwt(payload.token);
-        if ([1, 2, 3].includes(userInfo.id) == true)
+        if ([813414784065863692, 2, 3].includes(userInfo.id))
         {
             return {
                 statusCode: 403
