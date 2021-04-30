@@ -31,6 +31,12 @@ exports.handler = async function (event, context) {
         payload.token !== undefined) {
         
         const userInfo = decodeJwt(payload.token);
+        if ([1, 2, 3].includes(userInfo.id) == true)
+        {
+            return {
+                statusCode: 403
+            };
+        }
         const message = {
             embed: {
                 title: "New appeal submitted!",
